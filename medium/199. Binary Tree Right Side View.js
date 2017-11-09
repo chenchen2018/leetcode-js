@@ -16,7 +16,7 @@ var rightSideView = function(root) {
 };
 
 function traverse(node, res, level) {
-    if (node == null) {
+    if (!node) {
         return;
     }
     if (res.length <= level) {
@@ -39,10 +39,10 @@ var rightSideView2 = function(root) {
         res.push(queue[0].val);
         while (queue.length) {
             var node = queue.shift();
-            if (node.right != null) {
+            if (node.right) {
                 nextLevel.push(node.right);
             }
-            if (node.left != null) {
+            if (node.left) {
                 nextLevel.push(node.left);
             }
         }
